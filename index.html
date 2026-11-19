@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" style="color-scheme:dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ماستر كلاس: المحتوى والإعلانات بالذكاء الاصطناعي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0a0a0a;color:#fff;font:400 17px/1.8 Cairo,Tahoma,Arial,sans-serif;padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,h3,p{margin:0}
+.w{max-width:720px;margin:0 auto;padding:0 20px}
+.c{text-align:center}
+.top{position:sticky;top:0;z-index:50;background:#dc2626;text-align:center;font-weight:900;font-size:15px;padding:8px 12px;padding-top:calc(8px + env(safe-area-inset-top,0px))}
+.cd{margin-top:4px;font-size:20px;direction:ltr}
+.cd span{display:inline-block;min-width:2.2em;background:#000;border-radius:6px;padding:0 6px;margin:0 2px;font-variant-numeric:tabular-nums}
+.badge{display:inline-block;background:#059669;font-weight:900;border-radius:6px;padding:2px 12px;font-size:14px}
+h1{font-size:clamp(28px,7vw,46px);font-weight:900;line-height:1.4;margin-top:14px}
+h2{font-size:clamp(24px,6vw,32px);font-weight:900;line-height:1.4;margin-bottom:20px;text-align:center}
+.y{color:#facc15}.g{color:#34d399}.r{color:#ef4444}.m{color:#a3a3a3}
+.sub{color:#d4d4d4;font-size:18px;margin-top:16px}
+.vid{margin-top:26px;border:4px solid #fff;border-radius:12px;overflow:hidden;background:#000}
+.vid video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.price-card{margin-top:28px;border:2px solid #eab308;border-radius:16px;background:#171717;padding:20px;text-align:center}
+.old{color:#a3a3a3;text-decoration:line-through;font-size:24px}
+.big{font-weight:900;font-size:60px;color:#facc15;line-height:1.3}
+.big small{font-size:28px}
+.small{font-size:14px;color:#a3a3a3;margin:4px 0 16px}
+.btn{display:block;text-decoration:none;text-align:center;font-weight:900;border-radius:12px;padding:14px;font-size:20px;background:#eab308;color:#000}
+.btn.dis{background:#404040;color:#a3a3a3;pointer-events:none}
+.btn.inl{display:inline-block;padding:16px 32px;font-size:24px;border-radius:16px}
+@keyframes p{0%,100%{transform:scale(1);box-shadow:0 0 16px #eab308}50%{transform:scale(1.04);box-shadow:0 0 36px #eab308}}
+.cta{animation:p 1.6s infinite}
+@media(prefers-reduced-motion:reduce){.cta{animation:none}}
+a:focus-visible,summary:focus-visible{outline:3px solid #eab308;outline-offset:3px}
+section{padding:40px 0}
+.alt{background:#0d0d0d;border-block:1px solid #262626}
+.grid{display:grid;gap:14px}
+@media(min-width:640px){.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}}
+.card{border:1px solid #404040;border-radius:12px;background:#171717;padding:16px}
+.card.red{border-color:#dc2626}.card.grn{border:2px solid #10b981}
+.card h3{font-size:18px;font-weight:900;margin-bottom:4px}
+.card p{font-size:15px;color:#d4d4d4}
+.bar{height:20px;background:#262626;border:1px solid #404040;border-radius:99px;overflow:hidden;margin-top:8px}
+.bar div{height:100%;background:linear-gradient(to left,#dc2626,#eab308);width:0}
+.box{border:2px solid #525252;border-radius:12px;background:#171717;padding:20px;text-align:center}
+.box.now{border:4px solid #eab308;box-shadow:0 0 30px rgba(234,179,8,.3)}
+.box.win{border-color:#10b981;text-align:start;box-shadow:0 0 30px rgba(16,185,129,.3)}
+.box .n{font-weight:900;font-size:40px;margin:6px 0}
+details{border:1px solid #404040;background:#171717;border-radius:12px;margin-bottom:10px;padding:0 16px}
+summary{cursor:pointer;font-weight:700;padding:14px 0;display:flex;justify-content:space-between;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:#eab308;font-size:24px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{color:#d4d4d4;font-size:16px;padding-bottom:14px}
+footer{text-align:center;color:#737373;font-size:14px;padding:28px 0;border-top:1px solid #262626}
+</style>
+<script>
+/* ضع رقم Pixel ID هنا بدل النص */
+var PIXEL_ID = "PUT_PIXEL_ID_HERE";
+if (PIXEL_ID && PIXEL_ID.indexOf("PUT") !== 0) {
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', PIXEL_ID); fbq('track', 'PageView');
+}
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('[data-wa],[data-wa-later]');
+  if (a && window.fbq) fbq('track', 'Lead');
+});
+</script>
+</head>
+<body>
+
+<div class="top">
+  <span class="live-only">⚠️ تحذير: السعر سيرتفع إلى 9000 دج بعد انتهاء العرض أو نفاد المقاعد! اغتنم 3900 دج الآن</span>
+  <span class="late-only" style="display:none">انتهى عرض الإطلاق. السعر الحالي 9000 دج</span>
+  <div class="cd live-only" data-cd>--</div>
+</div>
+
+<header class="w c" style="padding-top:28px">
+  <span class="badge live-only">🔥 خصم 57% لفترة محدودة</span>
+  <h1>توقف عن دفع المال لغيرك: اصنع فيديو إعلانك بنفسك بالذكاء الاصطناعي، وأطلق <span class="y">أول حملة</span> في <span class="g">يومك الأول</span></h1>
+  <p class="sub">كم مرة دفعت لمصمم أو وكالة ثم انتظرت أياما؟ اليوم تتعلم أن تفعلها بنفسك: فيديو، ثم بطاقة، ثم إعلان، كل شيء في يوم واحد.</p>
+
+  <div class="vid"><video controls playsinline preload="none" poster="poster.jpg"><source src="intro.mp4" type="video/mp4"></video></div>
+
+  <div class="price-card">
+    <div class="r" style="font-size:36px" aria-hidden="true">⬇</div>
+    <div class="old live-only">9000 دج</div>
+    <div class="big"><span class="price">3900</span> <small>دج</small></div>
+    <p class="small live-only">هذا السعر لأول 100 مشترك أو حتى انتهاء العداد، أيهما أقرب. بعدها يعود السعر الأصلي.</p>
+    <a data-wa class="btn cta" href="#">احجز مقعدك الآن بـ <span class="price">3900</span> دج</a>
+  </div>
+</header>
+
+<section class="w" style="padding-bottom:10px">
+  <b id="seatTxt">--</b>
+  <div class="bar"><div id="seatBar"></div></div>
+</section>
+
+<section class="w">
+  <h2>لماذا تبقى متأخرا عن زبائنك؟</h2>
+  <div class="grid g3">
+    <div class="card red"><h3 class="r">تدفع لغيرك دائما</h3><p>كل فيديو وكل إعلان بمقابل، والنتيجة ليست بيدك.</p></div>
+    <div class="card red"><h3 class="r">الانتظار</h3><p>"ما عنديش الوقت" و"الأسبوع الجاي"، وتمر الأيام بلا إعلان.</p></div>
+    <div class="card red"><h3 class="r">لا تتحكم في شيء</h3><p>تنتظر عمل غيرك ولا تعرف ماذا يجري في إعلانك.</p></div>
+  </div>
+</section>
+
+<section class="alt"><div class="w">
+  <h2 style="text-align:start">هنا يأتي دور <span class="y">الماستر كلاس</span></h2>
+  <p style="color:#d4d4d4;font-size:18px">نعرّفك على أدوات وطرق <b class="g">مجانية</b> لصناعة فيديوهات ومنشورات بجودة عالية بالذكاء الاصطناعي، ثم نريك الخطوات لفتح بطاقتك وتشغيل أول إعلان.</p>
+  <p class="small" style="margin-top:14px">لا نعد بأرباح مضمونة؛ النتيجة تتبع منتجك وعملك.</p>
+</div></section>
+
+<section class="w">
+  <h2>محتوى الدورة</h2>
+  <div class="grid g2">
+    <div class="card"><b class="y">01</b> <b>المنشورات الاحترافية</b><p>تصميم بوستات بالذكاء الاصطناعي.</p></div>
+    <div class="card"><b class="y">02</b> <b>الفيديوهات المجانية</b><p>إنتاج فيديوهات بأدوات مجانية.</p></div>
+    <div class="card"><b class="y">03</b> <b>فتح بطاقة فيزا</b><p>الخطوات لتدفع بها إعلاناتك.</p></div>
+    <div class="card"><b class="y">04</b> <b>إطلاق الإعلانات</b><p>أول حملة بالعملة الصعبة.</p></div>
+  </div>
+</section>
+
+<section class="alt"><div class="w">
+  <h2>هدايا مع الدورة</h2>
+  <div class="grid g3 c">
+    <div class="card grn"><b>مكتبة برومبتات</b></div>
+    <div class="card grn"><b>قائمة الأدوات المجانية</b></div>
+    <div class="card grn"><b>دليل بطاقة الفيزا</b></div>
+  </div>
+</div></section>
+
+<section class="w">
+  <h2>قارن بنفسك</h2>
+  <div class="grid g2">
+    <div class="box" style="text-align:start"><h3 class="m" style="margin-bottom:8px">الطرق التقليدية</h3><p>❌ تدفع لمصمم عن كل فيديو</p><p>❌ تنتظر أياما</p><p>❌ لا تعرف كيف تدفع للإعلانات</p></div>
+    <div class="box win"><h3 class="g" style="margin-bottom:8px">الماستر كلاس</h3><p>✅ أدوات مجانية</p><p>✅ تصنع المحتوى بنفسك</p><p>✅ تفتح بطاقتك وتطلق إعلانك</p></div>
+  </div>
+</section>
+
+<section class="alt"><div class="w">
+  <h2>اختر باقتك</h2>
+  <div class="grid g2">
+    <div class="box" id="boxLater">
+      <div class="m"><b>السعر العادي</b></div>
+      <div class="n">9000 دج</div>
+      <a data-wa-later id="btnLater" class="btn dis" href="#" aria-disabled="true">غير متاح حاليا</a>
+    </div>
+    <div class="box now" id="boxNow">
+      <div class="y"><b>عرض الـ 100 الأوائل</b></div>
+      <div class="old" style="font-size:18px">9000 دج</div>
+      <div class="n y" style="font-size:48px">3900 دج</div>
+      <a data-wa class="btn cta" href="#">اشترك الآن</a>
+    </div>
+  </div>
+</div></section>
+
+<section class="w c">
+  <div class="box win" style="text-align:center">
+    <h2 class="g" style="font-size:24px;margin-bottom:8px">ضمان استرداد الأموال لمدة 7 أيام</h2>
+    <p style="color:#d4d4d4">إذا شاهدت الدورة ولم تستفد، نرجع لك مبلغك خلال 7 أيام من التسجيل. راسلنا على واتساب لطلب الاسترداد.</p>
+  </div>
+</section>
+
+<section class="alt"><div class="w">
+  <h2>أسئلة شائعة</h2>
+  <details><summary>ماذا يحدث بعد نفاد المقاعد؟</summary><p>بعد انتهاء العداد أو اكتمال 100 مشترك، يعود السعر إلى 9000 دج.</p></details>
+  <details><summary>هل أحتاج خبرة سابقة؟</summary><p>لا، نبدأ من الصفر.</p></details>
+  <details><summary>هل الأدوات فعلا مجانية؟</summary><p>نعتمد على أدوات مجانية. بعضها قد يضع حدودا يومية على الاستخدام المجاني.</p></details>
+  <details><summary>كيف أستلم الدورة؟</summary><p>بعد تأكيد الدفع على واتساب، ندخلك إلى قناة تيليغرام خاصة بالدورة.</p></details>
+  <details><summary>هل تضمنون الأرباح؟</summary><p>لا. نعلمك الطريقة، والنتيجة تتبع منتجك وعملك.</p></details>
+</div></section>
+
+<section class="w c" style="padding:48px 20px">
+  <h2 style="font-size:clamp(24px,6vw,34px)">الفرصة لا تأتي مرتين: إما أن تبدأ الآن بـ <span class="y price">3900</span> دج، أو تدفع 9000 دج لاحقا</h2>
+  <div class="cd live-only" data-cd style="font-size:26px;margin-bottom:22px">--</div>
+  <a data-wa class="btn inl cta" href="#">احجز مقعدك الآن</a>
+</section>
+
+<footer>ماستر كلاس: المحتوى والإعلانات بالذكاء الاصطناعي</footer>
+
+<script>
+/* إعدادات يعدلها صاحب الصفحة */
+var END = new Date("2026-11-28T23:59:00+01:00"); // نهاية العرض (تاريخ ثابت وحقيقي)
+var SOLD = 74;                                   // عدد المقاعد المحجوزة فعلا
+var TOTAL = 100, NOW_PRICE = 3900, LATER_PRICE = 9000, PHONE = "213668442931";
+
+function pad(n){return String(n).padStart(2,"0")}
+function isLive(){return Date.now() < END.getTime() && SOLD < TOTAL}
+function render(){
+  var live = isLive();
+  document.querySelectorAll(".live-only").forEach(function(e){e.style.display = live ? "" : "none"});
+  document.querySelectorAll(".late-only").forEach(function(e){e.style.display = live ? "none" : ""});
+  var p = live ? NOW_PRICE : LATER_PRICE;
+  document.querySelectorAll(".price").forEach(function(e){e.textContent = p});
+  var msg = encodeURIComponent("أريد التسجيل في الدورة بسعر " + p + " دج");
+  document.querySelectorAll("[data-wa]").forEach(function(a){a.href = "https://wa.me/" + PHONE + "?text=" + msg});
+  var bn = document.getElementById("boxNow"), bl = document.getElementById("btnLater");
+  if(bn) bn.style.display = live ? "" : "none";
+  if(!live && bl){ bl.className = "btn cta"; bl.textContent = "اشترك الآن"; bl.removeAttribute("aria-disabled"); bl.href = "https://wa.me/" + PHONE + "?text=" + msg; }
+  var left = Math.max(0, END.getTime() - Date.now()), s = Math.floor(left/1000);
+  var t = [Math.floor(s/86400), Math.floor(s%86400/3600), Math.floor(s%3600/60), s%60].map(function(x){return "<span>"+pad(x)+"</span>"}).join(":");
+  document.querySelectorAll("[data-cd]").forEach(function(e){e.innerHTML = t});
+  var txt = document.getElementById("seatTxt"), bar = document.getElementById("seatBar");
+  txt.textContent = SOLD === 0 ? "المقاعد بسعر الإطلاق: " + TOTAL + " مقعد متاح" : "تم حجز " + SOLD + " مقعد من " + TOTAL + " (بقي " + (TOTAL-SOLD) + " فقط بالسعر المخفض)";
+  bar.style.width = Math.min(100, SOLD/TOTAL*100) + "%";
+}
+render(); setInterval(render, 1000);
+</script>
+</body>
+</html>
